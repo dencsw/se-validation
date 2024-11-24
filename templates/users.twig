@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.1 валидация</title>
+</head>
+<body>
+    <h1>Задание 2.1</h1>
+    <h3>Объекты класса User, не прошедшие валидацию</h3>
+
+    {% if users is not empty %}
+        <ul>
+        {% for user in users %}
+            <li>
+                <strong>Object:</strong> {{ user.userData }}<br>
+                <strong>Errors:</strong> {{ user.errors }}<br>
+               
+                <hr>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Нет комментариев, которые соответствуют фильтру.</p>
+    {% endif %}
+
+</body>
+</html>
